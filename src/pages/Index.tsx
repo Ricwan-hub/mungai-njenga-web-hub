@@ -1,13 +1,67 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { Suspense, lazy, useEffect } from "react";
+import MainLayout from "@/layouts/MainLayout";
+import LoadingSpinner from "@/components/LoadingSpinner";
+
+// Lazy load components
+const Hero = lazy(() => import('@/components/Hero'));
+const About = lazy(() => import('@/components/About'));
+const PracticeAreas = lazy(() => import('@/components/PracticeAreas'));
+const Team = lazy(() => import('@/components/Team'));
+const Testimonials = lazy(() => import('@/components/Testimonials'));
+const Contact = lazy(() => import('@/components/Contact'));
+
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center min-h-screen">
+    <LoadingSpinner size="lg" />
+  </div>
+);
 
 const Index = () => {
+  useEffect(() => {
+    // Preload the components after initial render
+    const preloadComponents = async () => {
+      const components = [
+        import('@/components/Hero'),
+        import('@/components/About'),
+        import('@/components/PracticeAreas'),
+        import('@/components/Team'),
+        import('@/components/Testimonials'),
+        import('@/components/Contact')
+      ];
+      
+      await Promise.all(components);
+    };
+    
+    preloadComponents();
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <MainLayout>
+      <Suspense fallback={<LoadingFallback />}>
+        <Hero />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingFallback />}>
+        <About />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingFallback />}>
+        <PracticeAreas />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingFallback />}>
+        <Team />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingFallback />}>
+        <Testimonials />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingFallback />}>
+        <Contact />
+      </Suspense>
+    </MainLayout>
   );
 };
 
