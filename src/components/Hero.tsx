@@ -1,7 +1,6 @@
 
 import { useEffect, useRef } from "react";
 import { ButtonCustom } from "./ui/button-custom";
-import { cn } from "@/lib/utils";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -25,12 +24,22 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center bg-no-repeat overflow-hidden"
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-primary/50 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-primary/70 backdrop-blur-sm"></div>
 
       {/* Content */}
       <div className="container-custom relative z-10 pt-20 md:pt-0">
         <div className="max-w-3xl mx-auto text-center text-white">
           <div className="animate-fade-in-down">
+            {/* Logo in hero section */}
+            <div className="flex justify-center mb-8">
+              <div className="w-28 h-28 rounded-full bg-white p-2">
+                <img
+                  src="/lovable-uploads/43bd0766-8ffe-44de-8095-ccb246e710a0.png"
+                  alt="Mungai & Njenga"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+            </div>
             <span className="inline-block px-3 py-1 mb-6 text-xs font-medium tracking-wider uppercase bg-white/10 backdrop-blur-sm rounded-full">
               Trusted Legal Advocates
             </span>

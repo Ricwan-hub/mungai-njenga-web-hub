@@ -8,6 +8,16 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-white pt-16 pb-8">
       <div className="container-custom">
+        <div className="flex justify-center mb-10">
+          <div className="w-20 h-20 rounded-full bg-white p-1">
+            <img 
+              src="/lovable-uploads/43bd0766-8ffe-44de-8095-ccb246e710a0.png" 
+              alt="Mungai & Njenga" 
+              className="w-full h-full object-cover rounded-full"
+            />
+          </div>
+        </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Company Info */}
           <div>

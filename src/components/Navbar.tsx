@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const Navbar = () => {
@@ -47,10 +47,19 @@ const Navbar = () => {
         {/* Logo */}
         <Link
           to="/"
-          className="font-serif text-2xl font-semibold tracking-tight z-50"
+          className="flex items-center z-50"
           onClick={closeMenu}
         >
-          Mungai & Njenga
+          <div className="w-12 h-12 rounded-full overflow-hidden mr-3">
+            <img 
+              src="/lovable-uploads/43bd0766-8ffe-44de-8095-ccb246e710a0.png" 
+              alt="Mungai & Njenga" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <span className="font-serif text-2xl font-semibold tracking-tight">
+            Mungai & Njenga
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
