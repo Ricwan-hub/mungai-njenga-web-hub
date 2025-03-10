@@ -33,7 +33,7 @@ const Hero = () => {
           <div className="animate-fade-in-down">
             {/* Logo in hero section */}
             <div className="flex justify-center mb-8">
-              <div className="w-28 h-28 rounded-full bg-white p-2">
+              <div className="w-24 h-24 rounded-full bg-white/10 p-1 shadow-lg border-2 border-secondary">
                 <img
                   src="/lovable-uploads/43bd0766-8ffe-44de-8095-ccb246e710a0.png"
                   alt="Mungai & Njenga"

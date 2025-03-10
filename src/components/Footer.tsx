@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="bg-primary text-white pt-16 pb-8">
       <div className="container-custom">
         <div className="flex justify-center mb-10">
-          <div className="w-20 h-20 rounded-full bg-white p-1">
+          <div className="w-16 h-16 rounded-full bg-white/10 p-1 border-2 border-secondary shadow-md">
             <img 
               src="/lovable-uploads/43bd0766-8ffe-44de-8095-ccb246e710a0.png" 
               alt="Mungai & Njenga" 

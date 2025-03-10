@@ -50,20 +50,20 @@ const Navbar = () => {
           className="flex items-center z-50"
           onClick={closeMenu}
         >
-          <div className="w-12 h-12 rounded-full overflow-hidden mr-3">
+          <div className="w-10 h-10 rounded-full overflow-hidden mr-3 border-2 border-secondary shadow-md">
             <img 
               src="/lovable-uploads/43bd0766-8ffe-44de-8095-ccb246e710a0.png" 
               alt="Mungai & Njenga" 
               className="w-full h-full object-cover"
             />
           </div>
-          <span className="font-serif text-2xl font-semibold tracking-tight">
+          <span className="font-serif text-xl font-semibold tracking-tight">
             Mungai & Njenga
           </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-8">
+        <nav className="hidden lg:flex items-center space-x-8 ml-auto">
           {navLinks.map((link) => (
             <Link
               key={link.name}
