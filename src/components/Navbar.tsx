@@ -50,14 +50,14 @@ const Navbar = () => {
           className="flex items-center z-50"
           onClick={closeMenu}
         >
-          <div className="w-10 h-10 rounded-full overflow-hidden mr-3 border-2 border-secondary shadow-md">
+          <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-secondary shadow-md bg-primary/80 flex-shrink-0 mr-4">
             <img 
-              src="/lovable-uploads/43bd0766-8ffe-44de-8095-ccb246e710a0.png" 
+              src="/lovable-uploads/471f3dce-a7a5-414b-9ebb-378fbb0901d7.png" 
               alt="Mungai & Njenga" 
               className="w-full h-full object-cover"
             />
           </div>
-          <span className="font-serif text-xl font-semibold tracking-tight text-white">
+          <span className="font-serif text-xl font-semibold tracking-tight text-white hidden sm:inline">
             Mungai & Njenga
           </span>
         </Link>
