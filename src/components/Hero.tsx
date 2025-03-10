@@ -1,6 +1,7 @@
 
 import { useEffect, useRef } from "react";
 import { ButtonCustom } from "./ui/button-custom";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -41,13 +42,13 @@ const Hero = () => {
               </div>
             </div>
             <span className="inline-block px-3 py-1 mb-6 text-xs font-medium tracking-wider uppercase bg-white/10 backdrop-blur-sm rounded-full">
-              Trusted Legal Advocates
+              Premier Legal Services in Kenya
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold leading-tight md:leading-tight lg:leading-tight mb-6 text-balance">
               Exceptional Legal Services for Complex Matters
             </h1>
             <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto text-balance">
-              Mungai & Njenga delivers sophisticated legal counsel with a personalized approach, helping clients navigate their most significant challenges.
+              We provide comprehensive legal support, combining deep industry expertise with a practical approach to ensure effective solutions for both local and international clients.
             </p>
           </div>
 
@@ -55,17 +56,23 @@ const Hero = () => {
             <ButtonCustom
               size="lg"
               variant="secondary"
+              asChild
               className="group relative overflow-hidden shadow-lg"
             >
-              <span className="relative z-10">Schedule Consultation</span>
-              <span className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
+              <Link to="/#contact">
+                <span className="relative z-10">Schedule Consultation</span>
+                <span className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
+              </Link>
             </ButtonCustom>
             <ButtonCustom
               size="lg"
               variant="outline"
+              asChild
               className="border-white text-white hover:bg-white/10 hover:text-white"
             >
-              Learn More
+              <Link to="/services">
+                Our Services
+              </Link>
             </ButtonCustom>
           </div>
         </div>

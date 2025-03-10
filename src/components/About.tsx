@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import { ButtonCustom } from "./ui/button-custom";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import { Scale, Shield, BookOpen } from "lucide-react";
+import { Scale, Shield, BookOpen, HeartHandshake } from "lucide-react";
 
 const About = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -57,22 +57,29 @@ const About = () => {
               About Our Firm
             </Badge>
             <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-              A Legacy of Excellence in Legal Practice
+              A Leading Law Firm in Kenya
             </h2>
             <p className="text-muted-foreground mb-6">
-              Founded in 1998, Mungai & Njenga has established itself as a premier legal practice, delivering exceptional counsel to individuals and organizations across diverse sectors. Our approach combines technical expertise with a deep understanding of our clients' unique needs.
+              Mungai & Njenga Company Advocates is a premier law firm based in Murang'a, Kenya, dedicated to delivering exceptional legal services across various sectors. Established with a commitment to integrity, professionalism, and client satisfaction, the firm has carved a niche in the competitive legal landscape of Kenya.
             </p>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm mb-6">
+              <h3 className="text-xl font-medium mb-2">Our Mission</h3>
+              <p className="text-muted-foreground">
+                We aim to provide comprehensive legal support, combining deep industry expertise with a practical approach to ensure effective solutions for both local and international clients.
+              </p>
+            </div>
 
             <Separator className="my-8" />
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div className="flex flex-col items-start">
                 <div className="bg-primary/10 p-3 rounded-lg mb-4">
                   <Scale className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-lg font-medium mb-2">Integrity</h3>
                 <p className="text-sm text-muted-foreground">
-                  We uphold the highest ethical standards in all our dealings.
+                  Upholding ethical standards in all our dealings.
                 </p>
               </div>
 
@@ -82,7 +89,17 @@ const About = () => {
                 </div>
                 <h3 className="text-lg font-medium mb-2">Excellence</h3>
                 <p className="text-sm text-muted-foreground">
-                  We are relentless in our pursuit of the best outcomes.
+                  Striving for the highest quality in service delivery.
+                </p>
+              </div>
+
+              <div className="flex flex-col items-start">
+                <div className="bg-primary/10 p-3 rounded-lg mb-4">
+                  <HeartHandshake className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-medium mb-2">Collaboration</h3>
+                <p className="text-sm text-muted-foreground">
+                  Working together as a team to achieve client objectives.
                 </p>
               </div>
 
@@ -90,14 +107,14 @@ const About = () => {
                 <div className="bg-primary/10 p-3 rounded-lg mb-4">
                   <BookOpen className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-lg font-medium mb-2">Expertise</h3>
+                <h3 className="text-lg font-medium mb-2">Innovation</h3>
                 <p className="text-sm text-muted-foreground">
-                  Our attorneys bring specialized knowledge to every case.
+                  Embracing new ideas and technologies to improve service efficiency.
                 </p>
               </div>
             </div>
 
-            <ButtonCustom>Learn About Our History</ButtonCustom>
+            <ButtonCustom>Learn More About Our History</ButtonCustom>
           </div>
         </div>
       </div>

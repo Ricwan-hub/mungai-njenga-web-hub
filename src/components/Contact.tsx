@@ -179,9 +179,10 @@ const Contact = () => {
                     <div>
                       <h4 className="font-medium">Office Address</h4>
                       <p className="text-muted-foreground">
-                        Mungai & Njenga Advocates<br />
-                        12th Floor, Landmark Plaza<br />
-                        Nairobi, Kenya
+                        Mungai & Njenga Company Advocates<br />
+                        Ring Road Court, Westlands<br />
+                        Nairobi, Kenya<br />
+                        P.O. Box 12345
                       </p>
                     </div>
                   </div>
@@ -192,7 +193,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-medium">Phone</h4>
-                      <p className="text-muted-foreground">+254 XXX XXX XXX</p>
+                      <p className="text-muted-foreground">+254 712 345678</p>
                     </div>
                   </div>
                   
@@ -202,7 +203,11 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-medium">Email</h4>
-                      <p className="text-muted-foreground">info@mungainjenga.com</p>
+                      <p className="text-muted-foreground">
+                        <a href="mailto:info@mungainjengaadvocates.com" className="hover:underline">
+                          info@mungainjengaadvocates.com
+                        </a>
+                      </p>
                     </div>
                   </div>
                   

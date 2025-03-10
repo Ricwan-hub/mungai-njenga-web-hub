@@ -6,28 +6,28 @@ import { Separator } from "@/components/ui/separator";
 
 const teamMembers = [
   {
-    name: "John Mungai",
-    role: "Founding Partner",
-    image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    bio: "With over 25 years of experience in corporate law, John has established himself as a trusted advisor to major corporations and government entities."
-  },
-  {
-    name: "Sarah Njenga",
+    name: "Njoki Mungai",
     role: "Managing Partner",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    bio: "Sarah specializes in complex litigation and has successfully represented clients in high-stakes disputes both domestically and internationally."
+    image: "/lovable-uploads/76e90a5b-1ad1-4804-85da-e222713ed96b.png",
+    bio: "With extensive experience in corporate law and dispute resolution, Njoki has been instrumental in driving the firm's strategic direction since May 2016. She holds a Post Graduate Diploma in Law from the Kenya School of Law."
   },
   {
-    name: "David Karanja",
+    name: "James Njenga",
+    role: "Senior Associate",
+    image: "/lovable-uploads/8573d457-173d-4658-a443-3b611b2906cc.png",
+    bio: "Specializing in banking, finance, real estate, and construction law, James brings a wealth of knowledge in complex legal matters. His background includes significant roles in various reputable firms before joining Mungai & Njenga."
+  },
+  {
+    name: "Lillian Mungai",
+    role: "Senior Associate",
+    image: "/lovable-uploads/79db3f3e-45d7-45ad-9939-3f8df315bf6b.png",
+    bio: "Specializing in intellectual property, corporate governance, and commercial transactions, Lillian brings expertise in protecting clients' valuable assets and ensuring regulatory compliance."
+  },
+  {
+    name: "Keshi Mungai",
     role: "Senior Associate",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    bio: "David brings expertise in intellectual property law, helping clients protect and leverage their most valuable assets."
-  },
-  {
-    name: "Rebecca Ochieng",
-    role: "Associate",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    bio: "Rebecca focuses on real estate and property law, guiding clients through complex transactions and development projects."
+    bio: "Specializing in banking, finance, real estate, and construction law, Keshi brings a wealth of knowledge in complex legal matters and has significant experience in various reputable firms before joining Mungai & Njenga."
   }
 ];
 
@@ -105,6 +105,12 @@ const Team = () => {
               </Card>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-16 text-center">
+          <p className="text-muted-foreground mb-4">
+            The firm also comprises a dedicated team of associates who bring specialized knowledge across various legal fields, ensuring comprehensive service delivery.
+          </p>
         </div>
       </div>
     </section>

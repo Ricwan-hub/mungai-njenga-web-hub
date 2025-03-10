@@ -2,38 +2,74 @@
 import { useRef, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase, FileText, Building, Users, Scale, Database } from "lucide-react";
+import { 
+  Briefcase, FileText, Building, Users, Scale, Database, 
+  Bank, Landmark, ScrollText, BarChart3, Leaf, Globe, 
+  Heart, GraduationCap, Plane
+} from "lucide-react";
+import { ButtonCustom } from "./ui/button-custom";
+import { Link } from "react-router-dom";
 
 const practiceAreas = [
   {
     icon: <Briefcase className="h-8 w-8" />,
-    title: "Corporate Law",
-    description: "Comprehensive legal guidance for businesses of all sizes, from startups to multinational corporations."
+    title: "Corporate & Commercial Law",
+    description: "Expert guidance through complex mergers, acquisitions, corporate restructuring, joint ventures, and commercial contracts."
   },
   {
-    icon: <FileText className="h-8 w-8" />,
-    title: "Contract Law",
-    description: "Expert drafting, review, and negotiation of contracts to protect your interests and minimize risk."
+    icon: <Bank className="h-8 w-8" />,
+    title: "Banking & Finance",
+    description: "Legal support for banking operations, regulatory compliance, project finance transactions, and financial restructuring."
   },
   {
     icon: <Building className="h-8 w-8" />,
-    title: "Real Estate",
-    description: "Navigating complex property transactions, development projects, and real estate litigation."
-  },
-  {
-    icon: <Users className="h-8 w-8" />,
-    title: "Family Law",
-    description: "Sensitive and pragmatic representation in divorce, custody, and other family matters."
-  },
-  {
-    icon: <Scale className="h-8 w-8" />,
-    title: "Litigation",
-    description: "Skilled advocacy in court proceedings, alternative dispute resolution, and settlement negotiations."
+    title: "Real Estate & Conveyancing",
+    description: "Handling property transactions, ensuring smooth property transfers, and advising on land use regulations."
   },
   {
     icon: <Database className="h-8 w-8" />,
     title: "Intellectual Property",
-    description: "Protection and enforcement of trademarks, patents, copyrights, and trade secrets."
+    description: "Registration and enforcement of trademarks, patents, and copyrights, as well as representation in IP disputes."
+  },
+  {
+    icon: <Scale className="h-8 w-8" />,
+    title: "Litigation & Dispute Resolution",
+    description: "Representing clients in civil and commercial disputes, offering mediation, arbitration, and negotiation services."
+  },
+  {
+    icon: <Users className="h-8 w-8" />,
+    title: "Employment & Labor Law",
+    description: "Drafting employment contracts, handling labor disputes, and ensuring compliance with labor laws."
+  },
+  {
+    icon: <Leaf className="h-8 w-8" />,
+    title: "Environmental Law",
+    description: "Assisting with environmental compliance, sustainability practices, and conservation issues."
+  },
+  {
+    icon: <BarChart3 className="h-8 w-8" />,
+    title: "Tax Law",
+    description: "Tax planning, representation in tax disputes, and advising on VAT, corporate tax, and PAYE compliance."
+  },
+  {
+    icon: <ScrollText className="h-8 w-8" />,
+    title: "Insurance Law",
+    description: "Drafting and reviewing insurance policies, representing clients in claims disputes, and regulatory compliance."
+  },
+  {
+    icon: <Landmark className="h-8 w-8" />,
+    title: "Regulatory & Compliance",
+    description: "Assisting with obtaining operational licenses and permits, and advising on industry-specific regulations."
+  },
+  {
+    icon: <Globe className="h-8 w-8" />,
+    title: "Technology & Data Protection",
+    description: "Advising on cybersecurity, data privacy, and compliance with data protection laws."
+  },
+  {
+    icon: <Heart className="h-8 w-8" />,
+    title: "Family & Succession Law",
+    description: "Drafting wills, managing estate planning, and handling probate and succession disputes."
   }
 ];
 
@@ -109,6 +145,12 @@ const PracticeAreas = () => {
               </Card>
             </div>
           ))}
+        </div>
+        
+        <div className="text-center mt-12">
+          <ButtonCustom asChild>
+            <Link to="/services">View Detailed Service Portfolio</Link>
+          </ButtonCustom>
         </div>
       </div>
     </section>
