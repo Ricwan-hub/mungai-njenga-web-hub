@@ -100,7 +100,7 @@
   }
   
   .glass {
-    @apply bg-white/70 backdrop-blur-md shadow-sm border border-white/20;
+    @apply bg-primary/70 backdrop-blur-md shadow-sm border border-white/20;
   }
   
   .container-custom {

@@ -57,7 +57,7 @@ const Navbar = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <span className="font-serif text-xl font-semibold tracking-tight">
+          <span className="font-serif text-xl font-semibold tracking-tight text-white">
             Mungai & Njenga
           </span>
         </Link>
@@ -68,7 +68,7 @@ const Navbar = () => {
             <Link
               key={link.name}
               to={link.href}
-              className="text-sm font-medium hover:text-secondary transition-colors"
+              className="text-sm font-medium text-white hover:text-secondary transition-colors"
             >
               {link.name}
             </Link>
@@ -77,7 +77,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden z-50 text-primary"
+          className="lg:hidden z-50 text-white"
           onClick={toggleMenu}
           aria-label="Toggle Menu"
         >
@@ -100,7 +100,7 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="text-xl font-medium hover:text-secondary transition-colors"
+                  className="text-xl font-medium text-white hover:text-secondary transition-colors"
                   onClick={closeMenu}
                 >
                   {link.name}
