@@ -4,8 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { 
   Briefcase, FileText, Building, Users, Scale, Database, 
-  Bank, Landmark, ScrollText, BarChart3, Leaf, Globe, 
-  Heart, GraduationCap, Plane
+  Landmark, ScrollText, BarChart3, Leaf, Globe, 
+  Heart, GraduationCap, Plane, Building2
 } from "lucide-react";
 import { ButtonCustom } from "./ui/button-custom";
 import { Link } from "react-router-dom";
@@ -17,7 +17,7 @@ const practiceAreas = [
     description: "Expert guidance through complex mergers, acquisitions, corporate restructuring, joint ventures, and commercial contracts."
   },
   {
-    icon: <Bank className="h-8 w-8" />,
+    icon: <Building2 className="h-8 w-8" />,
     title: "Banking & Finance",
     description: "Legal support for banking operations, regulatory compliance, project finance transactions, and financial restructuring."
   },
