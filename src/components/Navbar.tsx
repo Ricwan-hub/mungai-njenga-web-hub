@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { navLinks } from "@/config/nav";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,15 +24,6 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
-
-  const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/#about" },
-    { name: "Practice Areas", href: "/#practice-areas" },
-    { name: "Our Team", href: "/#team" },
-    { name: "Testimonials", href: "/#testimonials" },
-    { name: "Contact", href: "/#contact" },
-  ];
 
   return (
     <header
