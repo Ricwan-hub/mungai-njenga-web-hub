@@ -7,16 +7,29 @@ const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let ticking = false;
+    let animationFrameId: number | null = null;
+
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      if (heroRef.current) {
-        // Parallax effect for background
-        heroRef.current.style.backgroundPositionY = `${scrollPosition * 0.4}px`;
+      if (!ticking) {
+        ticking = true;
+        animationFrameId = requestAnimationFrame(() => {
+          if (heroRef.current) {
+            const scrollPosition = window.scrollY;
+            heroRef.current.style.backgroundPositionY = `${scrollPosition * 0.4}px`;
+          }
+          ticking = false;
+        });
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
   }, []);
 
   return (

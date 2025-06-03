@@ -21,16 +21,19 @@ const Index = () => {
   useEffect(() => {
     // Preload the components after initial render
     const preloadComponents = async () => {
-      const components = [
-        import('@/components/Hero'),
-        import('@/components/About'),
-        import('@/components/PracticeAreas'),
-        import('@/components/Team'),
-        import('@/components/Testimonials'),
-        import('@/components/Contact')
+      const componentImporters = [
+        () => import('@/components/Hero'),
+        () => import('@/components/About'),
+        () => import('@/components/PracticeAreas'),
+        () => import('@/components/Team'),
+        () => import('@/components/Testimonials'),
+        () => import('@/components/Contact')
       ];
       
-      await Promise.all(components);
+      for (const importer of componentImporters) {
+        await importer();
+        await new Promise(resolve => setTimeout(resolve, 100)); // 100ms delay
+      }
     };
     
     preloadComponents();
