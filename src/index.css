@@ -8,19 +8,19 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 13% 23%;
+    --foreground: 180 100% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 13% 23%;
+    --card-foreground: 180 100% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 13% 23%;
+    --popover-foreground: 180 100% 15%;
 
-    --primary: 220 13% 23%;
+    --primary: 180 100% 15%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 32 100% 50%;
-    --secondary-foreground: 220 13% 23%;
+    --secondary: 45 100% 50%;
+    --secondary-foreground: 180 100% 15%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -60,7 +60,7 @@
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 32 100% 50%;
+    --secondary: 45 100% 50%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 217.2 32.6% 17.5%;
@@ -127,5 +127,17 @@
   .fade-image {
     -webkit-mask-image: linear-gradient(to top, transparent, black 30%);
     mask-image: linear-gradient(to top, transparent, black 30%);
+  }
+  
+  .teal-gradient {
+    background: linear-gradient(135deg, #004d4d 0%, #006666 50%, #008080 100%);
+  }
+  
+  .gold-accent {
+    color: #FFD700;
+  }
+  
+  .gold-bg {
+    background-color: #FFD700;
   }
 }
