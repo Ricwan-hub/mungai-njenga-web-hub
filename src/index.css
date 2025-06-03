@@ -8,19 +8,19 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 180 100% 15%;
+    --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 180 100% 15%;
+    --card-foreground: 222.2 84% 4.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 180 100% 15%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 180 100% 15%;
+    --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 45 100% 50%;
-    --secondary-foreground: 180 100% 15%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -60,8 +60,8 @@
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 45 100% 50%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
@@ -100,7 +100,7 @@
   }
   
   .glass {
-    @apply bg-primary/70 backdrop-blur-md shadow-sm border border-white/20;
+    @apply bg-white/90 backdrop-blur-md shadow-lg border border-white/20;
   }
   
   .container-custom {
@@ -127,17 +127,5 @@
   .fade-image {
     -webkit-mask-image: linear-gradient(to top, transparent, black 30%);
     mask-image: linear-gradient(to top, transparent, black 30%);
-  }
-  
-  .teal-gradient {
-    background: linear-gradient(135deg, #004d4d 0%, #006666 50%, #008080 100%);
-  }
-  
-  .gold-accent {
-    color: #FFD700;
-  }
-  
-  .gold-bg {
-    background-color: #FFD700;
   }
 }

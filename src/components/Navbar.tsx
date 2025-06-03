@@ -50,11 +50,11 @@ const Navbar = () => {
           className="flex items-center z-50"
           onClick={closeMenu}
         >
-          <div className="w-12 h-12 flex items-center justify-center mr-3 transition-all duration-300 hover:scale-105">
+          <div className="w-8 h-8 flex items-center justify-center mr-3">
             <img 
               src="/lovable-uploads/61a7f345-f09a-49ac-92fa-87f2f93aa59c.png" 
               alt="Mungai & Njenga" 
-              className="h-10 w-auto object-contain drop-shadow-lg"
+              className="h-8 w-auto object-contain"
             />
           </div>
           <span className="font-serif text-xl font-semibold tracking-tight text-white">
@@ -68,17 +68,16 @@ const Navbar = () => {
             <Link
               key={link.name}
               to={link.href}
-              className="text-sm font-medium text-white hover:text-secondary transition-all duration-300 relative group"
+              className="text-sm font-medium text-white hover:text-gray-300 transition-colors duration-300"
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
         </nav>
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden z-50 text-white hover:text-secondary transition-colors duration-300"
+          className="lg:hidden z-50 text-white hover:text-gray-300 transition-colors duration-300"
           onClick={toggleMenu}
           aria-label="Toggle Menu"
         >
@@ -88,7 +87,7 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         <div
           className={cn(
-            "fixed inset-0 teal-gradient backdrop-blur-md transition-all duration-300 lg:hidden",
+            "fixed inset-0 bg-primary/95 backdrop-blur-md transition-all duration-300 lg:hidden",
             {
               "opacity-100 pointer-events-auto": isOpen,
               "opacity-0 pointer-events-none": !isOpen,
@@ -101,7 +100,7 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="text-xl font-medium text-white hover:text-secondary transition-all duration-300 transform hover:scale-105"
+                  className="text-xl font-medium text-white hover:text-gray-300 transition-colors duration-300"
                   onClick={closeMenu}
                 >
                   {link.name}
