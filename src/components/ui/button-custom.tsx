@@ -18,12 +18,12 @@ const ButtonCustom = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Comp
         className={cn(
-          "inline-flex items-center justify-center rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50 disabled:pointer-events-none",
+          "inline-flex items-center justify-center rounded-md text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50 disabled:pointer-events-none",
           {
-            "bg-primary text-primary-foreground hover:opacity-90": variant === "primary",
-            "bg-secondary text-secondary-foreground hover:opacity-90": variant === "secondary",
-            "border border-input bg-transparent hover:bg-accent hover:text-accent-foreground": variant === "outline",
-            "bg-transparent text-foreground hover:bg-accent hover:text-accent-foreground": variant === "ghost",
+            "bg-primary text-primary-foreground": variant === "primary",
+            "bg-secondary text-secondary-foreground": variant === "secondary",
+            "border border-input bg-transparent": variant === "outline",
+            "bg-transparent text-foreground": variant === "ghost",
             "underline-offset-4 hover:underline text-primary": variant === "link",
             "h-9 px-5 text-xs": size === "sm",
             "h-11 px-6 py-2": size === "md",

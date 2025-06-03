@@ -26,19 +26,19 @@ const Footer = () => {
               Providing exceptional legal counsel with integrity, expertise, and personalized attention.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white/70 hover:text-white transition-colors duration-300" aria-label="LinkedIn">
+              <a href="#" className="text-white/70 transition-colors duration-300" aria-label="LinkedIn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                   <rect x="2" y="9" width="4" height="12"></rect>
                   <circle cx="4" cy="4" r="2"></circle>
                 </svg>
               </a>
-              <a href="#" className="text-white/70 hover:text-white transition-colors duration-300" aria-label="Twitter">
+              <a href="#" className="text-white/70 transition-colors duration-300" aria-label="Twitter">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
                 </svg>
               </a>
-              <a href="#" className="text-white/70 hover:text-white transition-colors duration-300" aria-label="Facebook">
+              <a href="#" className="text-white/70 transition-colors duration-300" aria-label="Facebook">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                 </svg>
@@ -51,32 +51,32 @@ const Footer = () => {
             <h4 className="text-lg font-medium mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/" className="text-white/70 hover:text-white transition-colors">
+                <Link to="/" className="text-white/70 transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/#about" className="text-white/70 hover:text-white transition-colors">
+                <Link to="/#about" className="text-white/70 transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/#practice-areas" className="text-white/70 hover:text-white transition-colors">
+                <Link to="/#practice-areas" className="text-white/70 transition-colors">
                   Practice Areas
                 </Link>
               </li>
               <li>
-                <Link to="/#team" className="text-white/70 hover:text-white transition-colors">
+                <Link to="/#team" className="text-white/70 transition-colors">
                   Our Team
                 </Link>
               </li>
               <li>
-                <Link to="/#testimonials" className="text-white/70 hover:text-white transition-colors">
+                <Link to="/#testimonials" className="text-white/70 transition-colors">
                   Testimonials
                 </Link>
               </li>
               <li>
-                <Link to="/#contact" className="text-white/70 hover:text-white transition-colors">
+                <Link to="/#contact" className="text-white/70 transition-colors">
                   Contact Us
                 </Link>
               </li>
@@ -88,32 +88,32 @@ const Footer = () => {
             <h4 className="text-lg font-medium mb-6">Practice Areas</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-white/70 hover:text-white transition-colors">
+                <a href="#" className="text-white/70 transition-colors">
                   Corporate Law
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-white transition-colors">
+                <a href="#" className="text-white/70 transition-colors">
                   Contract Law
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-white transition-colors">
+                <a href="#" className="text-white/70 transition-colors">
                   Real Estate
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-white transition-colors">
+                <a href="#" className="text-white/70 transition-colors">
                   Family Law
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-white transition-colors">
+                <a href="#" className="text-white/70 transition-colors">
                   Litigation
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-white transition-colors">
+                <a href="#" className="text-white/70 transition-colors">
                   Intellectual Property
                 </a>
               </li>
@@ -139,13 +139,13 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center text-white/70 text-sm">
           <p>© {currentYear} Mungai & Njenga Advocates. All rights reserved.</p>
           <div className="flex mt-4 md:mt-0 space-x-6">
-            <a href="#" className="hover:text-white transition-colors duration-300">
+            <a href="#" className="transition-colors duration-300">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-white transition-colors duration-300">
+            <a href="#" className="transition-colors duration-300">
               Terms of Service
             </a>
-            <a href="#" className="hover:text-white transition-colors duration-300">
+            <a href="#" className="transition-colors duration-300">
               Disclaimer
             </a>
           </div>

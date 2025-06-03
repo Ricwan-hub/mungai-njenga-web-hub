@@ -68,7 +68,7 @@ const Navbar = () => {
             <Link
               key={link.name}
               to={link.href}
-              className="text-sm font-medium text-white hover:text-gray-300 transition-colors duration-300"
+              className="text-sm font-medium text-white transition-colors duration-300"
             >
               {link.name}
             </Link>
@@ -77,7 +77,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden z-50 text-white hover:text-gray-300 transition-colors duration-300"
+          className="lg:hidden z-50 text-white transition-colors duration-300"
           onClick={toggleMenu}
           aria-label="Toggle Menu"
         >
@@ -100,7 +100,7 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="text-xl font-medium text-white hover:text-gray-300 transition-colors duration-300"
+                  className="text-xl font-medium text-white transition-colors duration-300"
                   onClick={closeMenu}
                 >
                   {link.name}

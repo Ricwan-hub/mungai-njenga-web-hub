@@ -59,7 +59,7 @@ const Hero = () => {
               size="lg"
               variant="secondary"
               asChild
-              className="shadow-xl px-8 py-4 text-lg font-semibold"
+              className="shadow-xl px-8 py-4 text-lg font-semibold transition-all duration-300"
             >
               <Link to="/#contact">
                 Schedule Consultation
@@ -69,7 +69,7 @@ const Hero = () => {
               size="lg"
               variant="outline"
               asChild
-              className="border-2 border-white/50 text-white hover:bg-white/10 hover:text-white px-8 py-4 text-lg font-semibold"
+              className="border-2 border-white/50 text-white px-8 py-4 text-lg font-semibold transition-all duration-300"
             >
               <Link to="/services">
                 Our Services
