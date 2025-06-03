@@ -67,3 +67,17 @@ Simply open [Lovable](https://lovable.dev/projects/5b9db8b7-cf18-4050-bd14-60b35
 ## I want to use a custom domain - is that possible?
 
 We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+
+## Backend Details
+
+This project includes a Node.js/Express backend server located in the `/server` directory.
+
+Key features of the backend include:
+- **API for Dynamic Content:** Provides CRUD APIs for managing Team Members, Practice Areas, and Testimonials.
+- **Database:** Uses PostgreSQL with Sequelize ORM.
+- **Authentication:** Write operations (POST, PUT, DELETE) on the APIs are protected by an API key (`X-API-KEY` header).
+- **Testing:** Includes integration tests using Jest and Supertest.
+
+The frontend components for Team Members, Practice Areas, and Testimonials have been refactored to fetch data dynamically from these backend APIs.
+
+For detailed setup, API endpoint information, and instructions on running the backend server and its tests, please refer to the [Backend README](./server/README.md).

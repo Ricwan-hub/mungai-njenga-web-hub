@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  postgres_db:
+    image: postgres:14-alpine
+    container_name: lawfirm_postgres_db
+    environment:
+      POSTGRES_USER: ${DB_USER:-devuser} # Use DB_USER from .env or default to devuser
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-devpassword}
+      POSTGRES_DB: ${DB_NAME:-lawfirm_dev}
+    ports:
+      - "${DB_PORT:-5432}:5432" # Use DB_PORT from .env or default
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
