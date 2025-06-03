@@ -1,83 +1,64 @@
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, ReactElement } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
-  Briefcase, FileText, Building, Users, Scale, Database, 
-  Landmark, ScrollText, BarChart3, Leaf, Globe, 
-  Heart, GraduationCap, Plane, Building2
+  Briefcase, Building, Users, Scale, Database, Landmark, ScrollText,
+  BarChart3, Leaf, Globe, Heart, Building2, HelpCircle // Added HelpCircle as default
 } from "lucide-react";
 import { ButtonCustom } from "./ui/button-custom";
 import { Link } from "react-router-dom";
+import LoadingSpinner from "@/components/LoadingSpinner";
 
-const practiceAreas = [
-  {
-    icon: <Briefcase className="h-8 w-8" />,
-    title: "Corporate & Commercial Law",
-    description: "Expert guidance through complex mergers, acquisitions, corporate restructuring, joint ventures, and commercial contracts."
-  },
-  {
-    icon: <Building2 className="h-8 w-8" />,
-    title: "Banking & Finance",
-    description: "Legal support for banking operations, regulatory compliance, project finance transactions, and financial restructuring."
-  },
-  {
-    icon: <Building className="h-8 w-8" />,
-    title: "Real Estate & Conveyancing",
-    description: "Handling property transactions, ensuring smooth property transfers, and advising on land use regulations."
-  },
-  {
-    icon: <Database className="h-8 w-8" />,
-    title: "Intellectual Property",
-    description: "Registration and enforcement of trademarks, patents, and copyrights, as well as representation in IP disputes."
-  },
-  {
-    icon: <Scale className="h-8 w-8" />,
-    title: "Litigation & Dispute Resolution",
-    description: "Representing clients in civil and commercial disputes, offering mediation, arbitration, and negotiation services."
-  },
-  {
-    icon: <Users className="h-8 w-8" />,
-    title: "Employment & Labor Law",
-    description: "Drafting employment contracts, handling labor disputes, and ensuring compliance with labor laws."
-  },
-  {
-    icon: <Leaf className="h-8 w-8" />,
-    title: "Environmental Law",
-    description: "Assisting with environmental compliance, sustainability practices, and conservation issues."
-  },
-  {
-    icon: <BarChart3 className="h-8 w-8" />,
-    title: "Tax Law",
-    description: "Tax planning, representation in tax disputes, and advising on VAT, corporate tax, and PAYE compliance."
-  },
-  {
-    icon: <ScrollText className="h-8 w-8" />,
-    title: "Insurance Law",
-    description: "Drafting and reviewing insurance policies, representing clients in claims disputes, and regulatory compliance."
-  },
-  {
-    icon: <Landmark className="h-8 w-8" />,
-    title: "Regulatory & Compliance",
-    description: "Assisting with obtaining operational licenses and permits, and advising on industry-specific regulations."
-  },
-  {
-    icon: <Globe className="h-8 w-8" />,
-    title: "Technology & Data Protection",
-    description: "Advising on cybersecurity, data privacy, and compliance with data protection laws."
-  },
-  {
-    icon: <Heart className="h-8 w-8" />,
-    title: "Family & Succession Law",
-    description: "Drafting wills, managing estate planning, and handling probate and succession disputes."
+interface PracticeArea {
+  id: number;
+  icon: string | null; // Icon name as string from API
+  title: string;
+  description: string;
+}
+
+// Map string names to Lucide components
+const iconMap: Record<string, ReactElement> = {
+  Briefcase: <Briefcase className="h-8 w-8" />,
+  Building2: <Building2 className="h-8 w-8" />, // For Banking & Finance
+  Building: <Building className="h-8 w-8" />,   // For Real Estate
+  Database: <Database className="h-8 w-8" />,   // For IP
+  Scale: <Scale className="h-8 w-8" />,         // For Litigation
+  Users: <Users className="h-8 w-8" />,         // For Employment
+  Leaf: <Leaf className="h-8 w-8" />,           // For Environmental
+  BarChart3: <BarChart3 className="h-8 w-8" />, // For Tax
+  ScrollText: <ScrollText className="h-8 w-8" />,// For Insurance
+  Landmark: <Landmark className="h-8 w-8" />,   // For Regulatory
+  Globe: <Globe className="h-8 w-8" />,         // For Technology
+  Heart: <Heart className="h-8 w-8" />,         // For Family
+  Default: <HelpCircle className="h-8 w-8" />   // Default icon
+};
+
+const fetchPracticeAreas = async (): Promise<PracticeArea[]> => {
+  const response = await fetch('/api/practice-areas');
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({ message: 'Network response was not ok and no JSON body' }));
+    throw new Error(errorData.message || 'Network response was not ok');
   }
-];
+  return response.json();
+};
 
 const PracticeAreas = () => {
+  const { data: practiceAreas, isLoading, isError, error } = useQuery<PracticeArea[], Error>({
+    queryKey: ['practiceAreas'],
+    queryFn: fetchPracticeAreas,
+  });
+
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
+    if (isLoading || !practiceAreas || practiceAreas.length === 0) {
+      return;
+    }
+    cardRefs.current = cardRefs.current.slice(0, practiceAreas.length);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -93,20 +74,36 @@ const PracticeAreas = () => {
     if (currentSectionRef) {
       observer.observe(currentSectionRef);
     }
-
     cardRefs.current.forEach((card) => {
       if (card) observer.observe(card);
     });
 
     return () => {
-      if (currentSectionRef) {
-        observer.unobserve(currentSectionRef);
-      }
+      if (currentSectionRef) observer.unobserve(currentSectionRef);
       cardRefs.current.forEach((card) => {
         if (card) observer.unobserve(card);
       });
     };
-  }, []);
+  }, [isLoading, practiceAreas]);
+
+  if (isLoading) return (
+    <div className="container-custom text-center py-20">
+      <LoadingSpinner size="lg" />
+      <p className="mt-4 text-muted-foreground">Loading practice areas...</p>
+    </div>
+  );
+
+  if (isError) return (
+    <div className="container-custom text-center py-10">
+      <p className="text-red-500">Error fetching practice areas: {error?.message}</p>
+    </div>
+  );
+
+  if (!practiceAreas || practiceAreas.length === 0) return (
+    <div className="container-custom text-center py-10">
+      <p>No practice areas found.</p>
+    </div>
+  );
 
   return (
     <section id="practice-areas" className="section bg-white">
@@ -125,7 +122,7 @@ const PracticeAreas = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {practiceAreas.map((area, index) => (
             <div
-              key={area.title}
+              key={area.id} // Use database ID
               ref={(el) => (cardRefs.current[index] = el)}
               className="opacity-0"
               style={{ animationDelay: `${0.1 * index}s` }}
@@ -133,12 +130,12 @@ const PracticeAreas = () => {
               <Card className="h-full border-none shadow-sm hover:shadow-md transition-all duration-300 bg-white">
                 <CardHeader>
                   <div className="bg-primary/5 p-3 inline-flex rounded-lg mb-4">
-                    {area.icon}
+                    {iconMap[area.icon || 'Default'] || iconMap.Default}
                   </div>
                   <CardTitle className="text-xl">{area.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base text-muted-foreground">
+                  <CardDescription className="text-base text-muted-foreground line-clamp-4">
                     {area.description}
                   </CardDescription>
                 </CardContent>
